@@ -1,8 +1,11 @@
-### Official code for [d-Sketch: Improving Visual Fidelity of Sketch-to-Image Translation with Pretrained Latent Diffusion Models without Retraining](https://doi.org/10.1007/978-3-031-78389-0_19).
+### Official code for [d-Sketch: Improving Visual Fidelity of Sketch-to-Image Translation with Pretrained Latent Diffusion Models without Retraining](https://arxiv.org/abs/2502.14007).
 
 *Accepted in the International Conference on Pattern Recognition (ICPR) 2024.*
 
 *Code is coming soon!*
+
+[![badge_torch](https://img.shields.io/badge/made_with-PyTorch_2.0-EE4C2C?style=flat-square&logo=PyTorch)](https://pytorch.org/)
+[![badge_arxiv](https://img.shields.io/badge/arXiv-2502.14007-brightgreen?style=flat-square)](https://arxiv.org/abs/2502.14007)
 
 ![teaser](https://github.com/user-attachments/assets/42cc1fe5-7c2d-4b66-b4e2-932674357426)
 
@@ -35,3 +38,4 @@ limitations under the License.
 ```
 
 ##### Made with :heart: and :pizza: on Earth.
+
