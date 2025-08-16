@@ -22,23 +22,27 @@ pip install -r requirements.txt
 * Download the [Flickr20 dataset](https://drive.google.com/file/d/1ORprRYC2wz3RqI2nyN6YLOA8YmEUhJWK/view) and extract into `datasets/flickr20` directory.
 * Run `lctn_train.py` with the following options.
 ```bash
-usage: lctn_train.py [-h] [--sd_path SD_PATH] [--mixed_precision {no,fp16,bf16,fp8}] [--force_cpu]
-                     [--data_root DATA_ROOT] [--image_size IMAGE_SIZE] [--batch_size BATCH_SIZE] [--shuffle]
-                     [--num_workers NUM_WORKERS] [--lr LR] [--steps STEPS] [--output_freq OUTPUT_FREQ]
-                     [--output_root OUTPUT_ROOT]
+lctn_train.py [-h] [--sd_path SD_PATH] [--mixed_precision {no,fp16,bf16,fp8}] [--force_cpu]
+              [--data_root DATA_ROOT] [--image_size IMAGE_SIZE] [--batch_size BATCH_SIZE] [--shuffle]
+              [--num_workers NUM_WORKERS] [--lr LR] [--steps STEPS] [--output_freq OUTPUT_FREQ]
+              [--output_root OUTPUT_ROOT]
 ```
+##### Example
 ```bash
 python lctn_train.py --sd_path stabilityai/stable-diffusion-2-1 --mixed_precision fp16 --data_root ./datasets/flickr20/ --image_size 768 --batch_size 4 --shuffle --num_workers 8 --lr 0.001 --steps 50000 --output_freq 100 --output_root ./output/
 ```
 
 ### :sparkles: Sampling
+* Download the [sample sketches](https://drive.google.com/file/d/1NvTniC2N9GQ4P3R6rxuVxTQu0B0Sp9uW/view) and extract into `result/sample_sketches` directory.
+* (Optional) Copy the best checkpoint `<OUTPUT_ROOT>/<TIMESTAMP>/lctn.pth` into `checkpoints` directory.
 * Run `lctn_sample.py` with the following options.
 ```bash
-usage: lctn_sample.py [-h] [--seed SEED] [--prompt PROMPT] [--sketch SKETCH] [--image_size IMAGE_SIZE]
-                      [--guidance_scale GUIDANCE_SCALE] [--noising_scale NOISING_SCALE] [--steps STEPS]
-                      [--sd_path SD_PATH] [--lctn_path LCTN_PATH] [--mixed_precision {no,fp16,bf16,fp8}] [--force_cpu]
-                      [--output_dir OUTPUT_DIR]
+lctn_sample.py [-h] [--seed SEED] [--prompt PROMPT] [--sketch SKETCH] [--image_size IMAGE_SIZE]
+               [--guidance_scale GUIDANCE_SCALE] [--noising_scale NOISING_SCALE] [--steps STEPS]
+               [--sd_path SD_PATH] [--lctn_path LCTN_PATH] [--mixed_precision {no,fp16,bf16,fp8}] [--force_cpu]
+               [--output_dir OUTPUT_DIR]
 ```
+##### Example
 ```bash
 python lctn_sample.py --seed 11111111 --prompt "photo of a fox" --sketch ./result/sample_sketches/fox.png --image_size 768 --guidance_scale 8.0 --noising_scale 0.8 --steps 50 --sd_path stabilityai/stable-diffusion-2-1 --lctn_path ./checkpoints/lctn_flickr20.pth --mixed_precision fp16 --output_dir ./result/fox/
 ```
@@ -72,3 +76,4 @@ limitations under the License.
 ```
 
 ##### Made with :heart: and :pizza: on Earth.
+
