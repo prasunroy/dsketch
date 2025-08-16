@@ -23,9 +23,9 @@ pip install -r requirements.txt
 * Run `lctn_train.py` with the following options.
 ```bash
 lctn_train.py [-h] [--sd_path SD_PATH] [--mixed_precision {no,fp16,bf16,fp8}] [--force_cpu]
-              [--data_root DATA_ROOT] [--image_size IMAGE_SIZE] [--batch_size BATCH_SIZE] [--shuffle]
-              [--num_workers NUM_WORKERS] [--lr LR] [--steps STEPS] [--output_freq OUTPUT_FREQ]
-              [--output_root OUTPUT_ROOT]
+              [--data_root DATA_ROOT] [--image_size IMAGE_SIZE] [--batch_size BATCH_SIZE]
+              [--shuffle] [--num_workers NUM_WORKERS] [--lr LR] [--steps STEPS]
+              [--output_freq OUTPUT_FREQ] [--output_root OUTPUT_ROOT]
 ```
 ##### Example
 ```bash
@@ -39,8 +39,8 @@ python lctn_train.py --sd_path stabilityai/stable-diffusion-2-1 --mixed_precisio
 ```bash
 lctn_sample.py [-h] [--seed SEED] [--prompt PROMPT] [--sketch SKETCH] [--image_size IMAGE_SIZE]
                [--guidance_scale GUIDANCE_SCALE] [--noising_scale NOISING_SCALE] [--steps STEPS]
-               [--sd_path SD_PATH] [--lctn_path LCTN_PATH] [--mixed_precision {no,fp16,bf16,fp8}] [--force_cpu]
-               [--output_dir OUTPUT_DIR]
+               [--sd_path SD_PATH] [--lctn_path LCTN_PATH] [--mixed_precision {no,fp16,bf16,fp8}]
+               [--force_cpu] [--output_dir OUTPUT_DIR]
 ```
 ##### Example
 ```bash
@@ -76,4 +76,3 @@ limitations under the License.
 ```
 
 ##### Made with :heart: and :pizza: on Earth.
-
